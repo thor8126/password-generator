@@ -1,0 +1,316 @@
+/* css reset */
+/* *************************************************** */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* **************************************************** */
+
+/*  main css  */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+}
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  background-color: #24232b;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  padding-bottom: 0;
+}
+
+.password {
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.password span:nth-child(1) {
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.password i {
+  font-size: 24px;
+  font-weight: 700;
+  color: #707070;
+  cursor: pointer;
+}
+
+.length {
+  margin-bottom: 24px;
+}
+.length-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: Arial;
+  color: #707070;
+}
+
+.length-top span:nth-child(2) {
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+}
+
+.input-range {
+  -webkit-appearance: none;
+  margin-top: 10px;
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+  outline: none;
+  background: linear-gradient(
+      to right,
+      #2a8b8b 0%,
+      #2a8b8b var(--value),
+      black var(--value),
+      black 100%
+    )
+    no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.input-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.checks {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  gap: 12px;
+  font-size: 16px;
+  font-family: Arial;
+  font-weight: 700;
+  color: #707070;
+}
+
+.checkbox-container {
+  gap: 0.6rem;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  border: 1px solid #707070;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #2a8b8b;
+}
+
+.status {
+  justify-content: space-between;
+  margin-bottom: 12px;
+  background-color: #16161c;
+  padding: 0.9rem 1.2rem;
+  border-radius: 8px;
+}
+
+.status > span {
+  font-family: Arial;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #707070;
+}
+
+.status-right {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  font-family: Arial;
+  font-size: 0.8rem;
+  line-height: 9px;
+  color: #707070;
+}
+
+.status-dashes {
+  width: 50px;
+}
+
+.dashes {
+  margin-right: 3px;
+  font-weight: 900;
+  font-size: medium;
+}
+
+.red {
+  color: #8a0000;
+}
+
+.green {
+  color: #46924e;
+}
+
+.yellow {
+  color: #e78b01;
+}
+
+button {
+  justify-content: space-between;
+  margin-bottom: 24px;
+  background-color: #2a8b8b;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  width: 100%;
+  border: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: Arial;
+}
