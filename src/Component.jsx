@@ -15,7 +15,6 @@ function Component() {
     e.target.style.setProperty("--value", ((newValue - 6) / 10) * 100 + "%");
     const charset = generateCharset();
     const password = generatePassword(charset, newValue);
-    setGeneratedPassword(password);
     const strength = calculatePasswordStrength(password);
     setPasswordStrength(strength);
   };
