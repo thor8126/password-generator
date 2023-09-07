@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function Component() {
-  const [range, setRange] = useState(8); // Set a default length
+  const [range, setRange] = useState(8);
   const [uppercase, setUppercase] = useState(true);
   const [lowercase, setLowercase] = useState(false);
   const [numbers, setNumbers] = useState(false);
@@ -10,7 +10,7 @@ function Component() {
   const [passwordStrength, setPasswordStrength] = useState("Poor");
 
   const handleRangeChange = (e) => {
-    const newValue = Math.min(Math.max(e.target.value, 6), 16); // Limit the range
+    const newValue = Math.min(Math.max(e.target.value, 6), 16);
     setRange(newValue);
     e.target.style.setProperty("--value", ((newValue - 6) / 10) * 100 + "%");
     const charset = generateCharset();
@@ -29,9 +29,7 @@ function Component() {
   };
 
   const handleCopyClick = () => {
-    // Check if the generated password is not empty
     if (generatedPassword) {
-      // Create a temporary textarea element to copy the text to the clipboard
       const textarea = document.createElement("textarea");
       textarea.value = generatedPassword;
       document.body.appendChild(textarea);
@@ -42,16 +40,14 @@ function Component() {
     }
   };
 
-  // Function to generate the character set based on user selections
   const generateCharset = () => {
-    let charset = "abcdefghijklmnopqrstuvwxyz"; // Always include lowercase characters
+    let charset = "abcdefghijklmnopqrstuvwxyz";
     if (uppercase) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     if (numbers) charset += "0123456789";
     if (characters) charset += "!@#$%^&*()_-+=[]{}|;:'<>,.?/";
     return charset;
   };
 
-  // Function to generate a random password
   const generatePassword = (charset, length) => {
     let password = "";
     for (let i = 0; i < length; i++) {
@@ -61,11 +57,7 @@ function Component() {
     return password;
   };
 
-  // Function to calculate password strength
   const calculatePasswordStrength = (password) => {
-    // Your strength calculation logic goes here
-    // You can return "weak", "medium", or "strong" based on your criteria
-    // For this example, we'll use a simple length-based criteria
     if (password.length <= 6) {
       return "Poor";
     } else if (password.length < 10) {
@@ -91,7 +83,6 @@ function Component() {
             ></i>
           </div>
 
-          {/* input with inline style to set --value CSS custom property */}
           <div className="length">
             <div className="length-top">
               <span>Character Length</span>
@@ -107,7 +98,7 @@ function Component() {
               name=""
               id=""
               style={{
-                "--value": ((range - 6) / 10) * 100 + "%", // Adjust the style based on the new range
+                "--value": ((range - 6) / 10) * 100 + "%",
               }}
             />
           </div>
